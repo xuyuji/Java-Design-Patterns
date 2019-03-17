@@ -33,7 +33,7 @@ public class SimplePrototypeTest {
 }
 ```
 
-可以看到，被克隆人和克隆人的工具是同一个。
+可以看到，被克隆人和克隆人的锤子是同一个。
 
 ## 深克隆
 
@@ -58,3 +58,4 @@ public class DeepPrototypeTest {
 }
 ```
 
+克隆人有自己的锤子了。
