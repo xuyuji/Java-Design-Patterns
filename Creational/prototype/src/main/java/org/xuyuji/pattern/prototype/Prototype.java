@@ -1,5 +1,5 @@
 package org.xuyuji.pattern.prototype;
 
 public interface Prototype extends Cloneable {
-	Prototype clone();
+	public Prototype clone();
 }
