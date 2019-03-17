@@ -46,7 +46,7 @@ public class Person implements Prototype, Serializable {
 		return this.deepClone();
 	}
 
-	private Person deepClone() {
+	private Prototype deepClone() {
 
 		try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
 				ObjectOutputStream oos = new ObjectOutputStream(bos);) {
