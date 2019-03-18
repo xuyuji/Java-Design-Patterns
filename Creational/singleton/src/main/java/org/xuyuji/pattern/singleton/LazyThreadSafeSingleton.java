@@ -2,7 +2,7 @@ package org.xuyuji.pattern.singleton;
 
 public class LazyThreadSafeSingleton {
 
-	private static LazyThreadSafeSingleton INSTANCE;
+	private static volatile LazyThreadSafeSingleton INSTANCE;
 
 	private LazyThreadSafeSingleton() {
 	}

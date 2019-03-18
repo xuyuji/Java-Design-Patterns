@@ -2,7 +2,7 @@ package org.xuyuji.pattern.singleton;
 
 public class DoubleLockingSingleton {
 
-	private static DoubleLockingSingleton instance;
+	private static volatile DoubleLockingSingleton instance;
 
 	private DoubleLockingSingleton() {
 	}
