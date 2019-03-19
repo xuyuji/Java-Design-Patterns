@@ -83,9 +83,9 @@ private Object readResolve() {
 
 ObjectInputStream.readObject()
 
-​	ObjectInputStream.readObject0(false)
+​    ObjectInputStream.readObject0(false)
 
-​		ObjectInputStream.readOrdinaryObject(false)
+​        ObjectInputStream.readOrdinaryObject(false)
 
 ```java
 if (obj != null &&
@@ -212,9 +212,9 @@ private ObjectStreamClass(final Class<?> cl) {
 
   ObjectInputStream.readObject()
 
-  ​	ObjectInputStream.readObject0(false)
+  ​    ObjectInputStream.readObject0(false)
 
-  ​		ObjectInputStream.readEnum(false)
+  ​        ObjectInputStream.readEnum(false)
 
   ```java
   ......
@@ -339,3 +339,5 @@ spring的模式，只是相对于例子更复杂，管理的是BeanDefinition。
 利用ThreadLocal初始化方法实例化单例，保证各线程内单例唯一。
 
 [ThreadLocalSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/ThreadLocalSingleton.java)
+
+验证见
