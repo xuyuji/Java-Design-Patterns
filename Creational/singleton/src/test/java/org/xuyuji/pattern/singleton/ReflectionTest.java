@@ -32,4 +32,12 @@ public class ReflectionTest {
 		c.setAccessible(true);
 		assertNotSame(EnumSingleton.INSTANCE, c.newInstance());
 	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testDestroyEnumSingleton2() throws Exception {
+		Class<EnumSingleton> clazz = EnumSingleton.class;
+		Constructor<EnumSingleton> c = clazz.getDeclaredConstructor(String.class, int.class);
+		c.setAccessible(true);
+		assertNotSame(EnumSingleton.INSTANCE, c.newInstance("test", 1));
+	}
 }
