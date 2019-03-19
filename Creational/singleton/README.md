@@ -88,9 +88,7 @@ ObjectInputStream.readObject()
 ​        ObjectInputStream.readOrdinaryObject(false)
 
 ```java
-if (obj != null &&
-    handles.lookupException(passHandle) == null &&
-    desc.hasReadResolveMethod())
+if (obj != null && handles.lookupException(passHandle) == null && desc.hasReadResolveMethod())
 {
     Object rep = desc.invokeReadResolve(obj);
     if (unshared && rep.getClass().isArray()) {
