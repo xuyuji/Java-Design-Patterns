@@ -141,9 +141,9 @@ private ObjectStreamClass(final Class<?> cl) {
 
 枚举依靠JDK保证了无法通过反射调用构造方法、无法通过反序列化创建新类。
 
-- 枚举不能通过反射调用构造方法
+- **枚举不能通过反射调用构造方法**
 
-  jad EnumSingleton.class得到EnumSingleton.jad
+  `jad EnumSingleton.class`得到EnumSingleton.jad
 
   ```java
   public final class EnumSingleton extends Enum
@@ -202,7 +202,7 @@ private ObjectStreamClass(final Class<?> cl) {
 
   clazz.getModifiers()和Modifier.ENUM做与运算，当modifier中包含有enum时，运算结果就是非零，那么这段逻辑判断就是判断是否是枚举类，也即是只要是枚举类就不允许调用newInstance方法。
 
-- 枚举无法通过反序列化创建新类
+- **枚举无法通过反序列化创建新类**
 
   枚举类反序列化回来依然是单例，验证见[SerializableTest.testDestroyEnumSingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/SerializableTest.java)。
 
@@ -238,7 +238,7 @@ private ObjectStreamClass(final Class<?> cl) {
   return result;
   ```
 
-  可以看到，直接调用了valueOf(Class<T> enumType, String name)方法
+  可以看到，直接调用了Enum.valueOf(Class<T> enumType, String name)方法
 
   Enum.valueOf
 
