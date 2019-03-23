@@ -11,7 +11,7 @@
 
   结构型模式处理类或对象的组合
 
-- [Behavioral(行为型)(https://github.com/xuyuji/Java-Design-Patterns/tree/master/Behavioral)
+- [Behavioral(行为型)](https://github.com/xuyuji/Java-Design-Patterns/tree/master/Behavioral)
 
   行为型模式对类或对象怎样交互和怎样分配职责进行描述
 
