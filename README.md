@@ -25,5 +25,7 @@
 
 - [《设计模式》](https://book.douban.com/subject/1052241/)
 - [java-design-patterns网站](https://java-design-patterns.com/)
+- [wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+- [维基百科](https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA))
 
 
