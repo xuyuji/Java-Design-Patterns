@@ -338,4 +338,4 @@ spring的模式，只是相对于例子更复杂，管理的是BeanDefinition。
 
 [ThreadLocalSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/ThreadLocalSingleton.java)
 
-验证见
+验证见[ConcurrentTest.testThreadLocalSingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/ConcurrentTest.java)
