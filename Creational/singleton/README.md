@@ -5,7 +5,7 @@
 在类加载时就初始化单例。
 
 - [HungerSingleton](src/main/java/org/xuyuji/pattern/singleton/HungerSingleton.java)
-- [HungerStaticSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/HungerStaticSingleton.java)
+- [HungerStaticSingleton](src/main/java/org/xuyuji/pattern/singleton/HungerStaticSingleton.java)
 
 ## 懒汉单例
 
@@ -13,13 +13,13 @@
 
 于是自然就有了懒加载的懒汉模式，在使用时再实例化。
 
-- [LazySingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/LazySingleton.java)
+- [LazySingleton](src/main/java/org/xuyuji/pattern/singleton/LazySingleton.java)
 
   普通的懒加载，不考虑线程安全问题。
 
-  用于验证。见[ConcurrentTest.testDestroyLazySingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/ConcurrentTest.java)
+  用于验证。见[ConcurrentTest.testDestroyLazySingleton()](src/test/java/org/xuyuji/pattern/singleton/ConcurrentTest.java)
 
-- [LazyThreadSafeSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/LazyThreadSafeSingleton.java)
+- [LazyThreadSafeSingleton](src/main/java/org/xuyuji/pattern/singleton/LazyThreadSafeSingleton.java)
 
   在LazySingleton基础上增加synchronized、volatile，保证线程安全。
 
@@ -29,7 +29,7 @@
 
   ​	故加上volatile关键字禁止指令重排。
 
-- [DoubleLockingSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/DoubleLockingSingleton.java)
+- [DoubleLockingSingleton](src/main/java/org/xuyuji/pattern/singleton/DoubleLockingSingleton.java)
 
   LazyThreadSafeSingleton每次获取单例都需要加锁，在初始化后这一处理没意义，平白增加资源消耗。
 
@@ -37,7 +37,7 @@
 
   性能比LazyThreadSafeSingleton高。
 
-- [InnerClassSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/InnerClassSingleton.java)
+- [InnerClassSingleton](src/main/java/org/xuyuji/pattern/singleton/InnerClassSingleton.java)
 
   利用内部类初始化单例，这一过程由虚拟机来保证线程安全问题。
 
@@ -57,7 +57,7 @@ PS：饿汉模式因为是类初始化过程
  }
  ```
 
- 验证见[ReflectionTest](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/ReflectionTest.java)
+ 验证见[ReflectionTest](src/test/java/org/xuyuji/pattern/singleton/ReflectionTest.java)
 
 ## 序列化破坏
 
@@ -65,7 +65,7 @@ PS：饿汉模式因为是类初始化过程
 
 解决办法就是接下来的`可序列化单例`和`枚举单例`
 
-验证见[SerializableTest.testDestroyHungerStaticSingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/SerializableTest.java)
+验证见[SerializableTest.testDestroyHungerStaticSingleton()](src/test/java/org/xuyuji/pattern/singleton/SerializableTest.java)
 
 ## 可序列化单例
 
@@ -77,7 +77,7 @@ private Object readResolve() {
 }
 ```
 
-实现见[SerializableSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/SerializableSingleton.java)
+实现见[SerializableSingleton](src/main/java/org/xuyuji/pattern/singleton/SerializableSingleton.java)
 
 为什么？
 
@@ -133,11 +133,11 @@ private ObjectStreamClass(final Class<?> cl) {
 
 从上面这些代码片段可以看出，当序列化对象有readResolve方法时，会调用这个方法然后替换掉obj。
 
-验证见[SerializableTest.testDestroySerializableSingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/SerializableTest.java)
+验证见[SerializableTest.testDestroySerializableSingleton()](src/test/java/org/xuyuji/pattern/singleton/SerializableTest.java)
 
 ## 枚举单例
 
-利用枚举来实现单例，见[EnumSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/EnumSingleton.java)。
+利用枚举来实现单例，见[EnumSingleton](src/main/java/org/xuyuji/pattern/singleton/EnumSingleton.java)。
 
 枚举依靠JDK保证了无法通过反射调用构造方法、无法通过反序列化创建新类。
 
@@ -183,11 +183,11 @@ private ObjectStreamClass(final Class<?> cl) {
 
   可以看到，没有无参构造器，反射调用无参构造器只会抛出异常`java.lang.NoSuchMethodException: org.xuyuji.pattern.singleton.EnumSingleton.<init>()`。
 
-  验证见[ReflectionTest.testDestroyEnumSingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/ReflectionTest.java)。
+  验证见[ReflectionTest.testDestroyEnumSingleton()](src/test/java/org/xuyuji/pattern/singleton/ReflectionTest.java)。
 
   那么再试试反射调用EnumSingleton(String s, int i)，依然抛出异常:`java.lang.IllegalArgumentException: Cannot reflectively create enum objects`。
 
-  验证见[ReflectionTest.testDestroyEnumSingleton2()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/ReflectionTest.java)。
+  验证见[ReflectionTest.testDestroyEnumSingleton2()](src/test/java/org/xuyuji/pattern/singleton/ReflectionTest.java)。
 
   这是为什么？
 
@@ -204,7 +204,7 @@ private ObjectStreamClass(final Class<?> cl) {
 
 - **枚举无法通过反序列化创建新类**
 
-  枚举类反序列化回来依然是单例，验证见[SerializableTest.testDestroyEnumSingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/SerializableTest.java)。
+  枚举类反序列化回来依然是单例，验证见[SerializableTest.testDestroyEnumSingleton()](src/test/java/org/xuyuji/pattern/singleton/SerializableTest.java)。
 
   为什么？
 
@@ -330,12 +330,12 @@ private ObjectStreamClass(final Class<?> cl) {
 
 spring的模式，只是相对于例子更复杂，管理的是BeanDefinition。
 
-[ContainerSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/ContainerSingleton.java)
+[ContainerSingleton](src/main/java/org/xuyuji/pattern/singleton/ContainerSingleton.java)
 
 ## ThreadLocal单例
 
 利用ThreadLocal初始化方法实例化单例，保证各线程内单例唯一。
 
-[ThreadLocalSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/ThreadLocalSingleton.java)
+[ThreadLocalSingleton](src/main/java/org/xuyuji/pattern/singleton/ThreadLocalSingleton.java)
 
-验证见[ConcurrentTest.testThreadLocalSingleton()](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/test/java/org/xuyuji/pattern/singleton/ConcurrentTest.java)
+验证见[ConcurrentTest.testThreadLocalSingleton()](src/test/java/org/xuyuji/pattern/singleton/ConcurrentTest.java)
