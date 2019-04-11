@@ -4,7 +4,7 @@
 
 在类加载时就初始化单例。
 
-- [HungerSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/HungerSingleton.java)
+- [HungerSingleton](src/main/java/org/xuyuji/pattern/singleton/HungerSingleton.java)
 - [HungerStaticSingleton](https://github.com/xuyuji/Java-Design-Patterns/blob/master/Creational/singleton/src/main/java/org/xuyuji/pattern/singleton/HungerStaticSingleton.java)
 
 ## 懒汉单例
